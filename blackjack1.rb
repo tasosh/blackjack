@@ -6,21 +6,31 @@ def calculate_total(cards)
 
 	total = 0
 	arr.each do |value|
-		if value == 'A'
+		if value == "A"
 			total += 11
 
-		if value.to_i = 0
+		elsif value.to_i = 0
 			total = total + 10
 		else 
 			total += value.to_i
 		end
 
+
 end
 
 #correct for Aces
+
+arr.select{|e| e == "A"}.count.times do
+	if total > 21
+		total -= 10
+	end
+
+
 if arr.include?("A") && total > 21
 	total -=10
-	
+
+end
+
 
 	total
 
